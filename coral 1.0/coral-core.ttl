@@ -1,0 +1,2136 @@
+@prefix : <http://purl.org/ncor-br/c-oral/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix coral: <http://purl.org/ncor-br/c-oral/> .
+@base <http://purl.org/ncor-br/c-oral/> .
+
+<http://purl.org/ncor-br/c-oral/> rdf:type owl:Ontology ;
+                                   owl:versionIRI <http://purl.org/ncor-br/2024/1/c-oral/> ;
+                                   owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo.owl> ;
+                                   <http://purl.org/dc/elements/1.1/contributor> "Heliana Mello - heliana.mello@gmail.com"@en ,
+                                                                                 "Mauricio Almeida - mba@eci.ufmg.br"@en ,
+                                                                                 "Tommaso Raso - tommaso.raso@gmail.com"@en ;
+                                   <http://purl.org/dc/terms/description> "The C-ORAL-BRASIL project is dedicated to the study of Brazilian Portuguese spontaneous speech and, more broadly, to the compilation of spoken corpora. The LEEL (Laboratory of Empirical and Experimental Studies on Language) lab at the Institute of Languages and Literature at the Federal University of Minas Gerais State (UFMG) represents C-ORAL-BRASIL’s headquarters. The C-ORAL-BRASIL research team is affiliated to the NELC (Research Nucleus on Language, Cognition and Culture). The ontology is work of the C-ORAL experts and knowledge enginners of ReCOL research group."@en ;
+                                   <http://purl.org/dc/terms/license> "Creative Commons 4.0"@en ;
+                                   <http://purl.org/dc/terms/title> "Informal Spoken Brazilian Portuguese Reference Corpus (C-ORAL-BRASIL) Ontology"@en ;
+                                   rdfs:label "CORAL Ontology"@en ;
+                                   owl:priorVersion "1.0"@en ;
+                                   owl:versionInfo "1.0"@en ;
+                                   <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#created> "June 2024"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#created
+<https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#created> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000050
+<http://purl.obolibrary.org/obo/BFO_0000050> rdf:type owl:ObjectProperty ;
+                                             rdfs:label "partOf"@en .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000299
+<http://purl.obolibrary.org/obo/OBI_0000299> rdf:type owl:ObjectProperty ;
+                                             rdfs:label "hasSpecifiedOutput"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/concretizes
+coral:concretizes rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ncor-br/c-oral/contains
+coral:contains rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf coral:storedWith ;
+               rdfs:label "contains"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/hasCharacteristic
+coral:hasCharacteristic rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ncor-br/c-oral/hasMetadata
+coral:hasMetadata rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ncor-br/c-oral/hasPart
+coral:hasPart rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ncor-br/c-oral/hasQuality
+coral:hasQuality rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ncor-br/c-oral/hasSource
+coral:hasSource rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ncor-br/c-oral/has_role
+coral:has_role rdf:type owl:ObjectProperty ;
+               rdfs:label "hasRole"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/includes
+coral:includes rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ncor-br/c-oral/isAbout
+coral:isAbout rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ncor-br/c-oral/isComposedBy
+coral:isComposedBy rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ncor-br/c-oral/isMarkedBy
+coral:isMarkedBy rdf:type owl:ObjectProperty ;
+                 owl:inverseOf coral:marks ;
+                 rdfs:label "isMarkedBy"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/isRecordedOf
+coral:isRecordedOf rdf:type owl:ObjectProperty ;
+                   owl:inverseOf coral:records ;
+                   rdfs:label "isRecordedOf"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/marks
+coral:marks rdf:type owl:ObjectProperty ;
+            rdfs:label "marks"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/produces
+coral:produces rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ncor-br/c-oral/records
+coral:records rdf:type owl:ObjectProperty ;
+              <http://www.w3.org/2004/02/skos/core#altLabel> "records"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/storedWith
+coral:storedWith rdf:type owl:ObjectProperty ;
+                 rdfs:label "storedWith"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/agent_in
+<http://www.ontologyrepository.com/CommonCoreOntologies/agent_in> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000056> ;
+                                                                  rdfs:comment "agent in"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000030
+<http://purl.obolibrary.org/obo/IAO_0000030> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty coral:isAbout ;
+                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000001>
+                                                             ] ;
+                                             rdfs:label "information content entity"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A generically dependent continuant that is about some thing."@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000300
+<http://purl.obolibrary.org/obo/IAO_0000300> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
+                                             rdfs:label "textual entity"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A textual entity is a part of a manifestation (FRBR sense), a generically dependent continuant whose concretizations are patterns of glyphs intended to be interpreted as words, formulas, etc."@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000305
+<http://purl.obolibrary.org/obo/IAO_0000305> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000314> ;
+                                             rdfs:label "document title"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000310
+<http://purl.obolibrary.org/obo/IAO_0000310> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
+                                             rdfs:label "document"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A collection of information content entities intended to be understood together as a whole"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000314
+<http://purl.obolibrary.org/obo/IAO_0000314> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000050> ;
+                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0000310>
+                                                             ] ;
+                                             rdfs:label "document part" ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "An information content entity that is part of a document." .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0020002
+<http://purl.obolibrary.org/obo/IAO_0020002> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
+                                             rdfs:label "utterance"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "An utterance is an information content entity that is a complete unit of speech in spoken language."@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0020008
+<http://purl.obolibrary.org/obo/IAO_0020008> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                             rdfs:comment "Sound energy bearing the concretization of an utterance and being the output of an uttering process."@en ;
+                                             rdfs:label "utterance energy"@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0020011
+<http://purl.obolibrary.org/obo/IAO_0020011> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0000011> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020002>
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://purl.obolibrary.org/obo/OBI_0000299> ;
+                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020008>
+                                                             ] ;
+                                             rdfs:comment "Utterance process is a planned process of making speech sounds which may or may not have an actual language involved."@en ;
+                                             rdfs:label "utterance process"@en .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000011
+<http://purl.obolibrary.org/obo/OBI_0000011> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
+                                             rdfs:label "planned process"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A process that realizes a plan which is the concretization of a plan specification."@en .
+
+
+###  http://purl.org/ncor-br/c-oralcorpus
+<http://purl.org/ncor-br/c-oralcorpus> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty coral:isAbout ;
+                                                         owl:someValuesFrom coral:audio_file
+                                                       ] ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty coral:isComposedBy ;
+                                                         owl:allValuesFrom coral:text
+                                                       ] ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty coral:isRecordedOf ;
+                                                         owl:allValuesFrom coral:speechProcess
+                                                       ] ;
+                                       rdfs:comment "Set of texts in electronic format, compiled according to specific criteria and considered representative of what is to be studied (tommaso)"@en ,
+                                                    "aggregate of texts" ;
+                                       rdfs:label "corpus"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Corpus is an information content entity that consists of a set of texts in electronic format, compiled according to specific criteria and considered representative of what is to be studied."@en .
+
+
+###  http://purl.org/ncor-br/c-oralhigh_funcionality_schizophrenics_patient
+<http://purl.org/ncor-br/c-oralhigh_funcionality_schizophrenics_patient> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://purl.org/ncor-br/patient> ,
+                                                                                         [ rdf:type owl:Class ;
+                                                                                           owl:unionOf ( coral:schizophrenics_speech_without_video
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty coral:produces ;
+                                                                                                           owl:someValuesFrom coral:schizophrenics_speech_with_video
+                                                                                                         ]
+                                                                                                       )
+                                                                                         ] ;
+                                                                         rdfs:label "high funcionality schizophrenics patient"@en .
+
+
+###  http://purl.org/ncor-br/c-orallow_funcionality_schizophrenics_patient
+<http://purl.org/ncor-br/c-orallow_funcionality_schizophrenics_patient> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://purl.org/ncor-br/patient> ,
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty coral:produces ;
+                                                                                          owl:someValuesFrom coral:schizophrenics_speech_with_video
+                                                                                        ] ;
+                                                                        rdfs:label "low funcionality schizophrenics patient"@en .
+
+
+###  http://purl.org/ncor-br/patient
+<http://purl.org/ncor-br/patient> rdf:type owl:Class ;
+                                  rdfs:subClassOf coral:participant ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                                    owl:someValuesFrom coral:patient_speech_process
+                                                  ] ;
+                                  rdfs:label "patient"@en ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "Patient is a participant that is realized in a patient speech process."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/ALL
+coral:ALL rdf:type owl:Class ;
+          rdfs:subClassOf coral:AUX ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:allocutive
+                          ] ;
+          rdfs:label "ALL" ;
+          <http://www.w3.org/2004/02/skos/core#definition> "ALL is a AUX tag that has function of marking an allocutive"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/ALL-PAR
+coral:ALL-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:ALL ;
+              rdfs:label "ALL-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "ALL-PAR is a ALL tag that has function of denoting a participle form."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/ALL-r
+coral:ALL-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:ALL ;
+            rdfs:label "ALL-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "ALL-r is a ALL tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/APC
+coral:APC rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:appendix_of_comment
+                          ] ;
+          rdfs:label "APC"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "APC is a tag that has function of marking an appendix of comment"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/APC-PAR
+coral:APC-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:APC ;
+              rdfs:label "APC-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "APC-PAR is a APC tag that has function of denoting a participle form."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/APC-r
+coral:APC-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:APC ;
+            rdfs:label "APC-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "APC-r is a APC tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/APT
+coral:APT rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:appendix_of_topic
+                          ] ;
+          rdfs:label "APT"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "APT is a tag that has function of marking an appendix of topic"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/APT-PAR
+coral:APT-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:APT ;
+              rdfs:label "APT-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "APT-PAR is a APT tag that has function of denoting a participle form." .
+
+
+###  http://purl.org/ncor-br/c-oral/APT-r
+coral:APT-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:APT ;
+            rdfs:label "APT-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "APT-r is a APT tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/AUX
+coral:AUX rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:dialogic_auxiliary
+                          ] ;
+          rdfs:label "AUX"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "AUX is a tag that has function of marking a dialogic auxiliary"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/CMM
+coral:CMM rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:multiple_comment
+                          ] ;
+          rdfs:label "CMM"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "CMM is a tag that has function of marking a multiple comment"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/CMM-PAR
+coral:CMM-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:CMM ;
+              rdfs:label "CMM-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "CMM-PAR is a CMM tag that has function of denoting a participle form."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/CMM-r
+coral:CMM-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:CMM ;
+            rdfs:label "CMM-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "CMM-r is a CMM tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/CNT
+coral:CNT rdf:type owl:Class ;
+          rdfs:subClassOf coral:AUX ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:conative
+                          ] ;
+          rdfs:label "CNT"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "CNT is a AUX tag that has function of marking a conative"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/CNT-PAR
+coral:CNT-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:CNT ;
+              rdfs:label "CNT-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "CNT-PAR is a CNT tag that has function of denoting a participle form."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/CNT-r
+coral:CNT-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:CNT ;
+            rdfs:label "CNT-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "CNT-r is a CNT tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/COB
+coral:COB rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:bound_comment
+                          ] ;
+          rdfs:label "COB"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "COB is a tag that has function of marking a bound comment"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/COB-PAR
+coral:COB-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:COB ;
+              rdfs:label "COB-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "COB-PAR is a COB tag that has function of denoting a participle form."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/COB-r
+coral:COB-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:COB ;
+            rdfs:label "COB-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "COB-r is a COB tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/COB_s
+coral:COB_s rdf:type owl:Class ;
+            rdfs:subClassOf coral:tag ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty coral:marks ;
+                              owl:someValuesFrom coral:subordinator_bound_comment
+                            ] ;
+            rdfs:label "COB_s"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "COB is a tag that has function of marking a subordinator bound comment"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/COB_s-PAR
+coral:COB_s-PAR rdf:type owl:Class ;
+                rdfs:subClassOf coral:COB_s ;
+                rdfs:label "COB_s-PAR"@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> "COB_S-PAR is a COB_s tag that has function of denoting a participle form."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/COB_s-r
+coral:COB_s-r rdf:type owl:Class ;
+              rdfs:subClassOf coral:COB_s ;
+              rdfs:label "COB_s-r"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "COB_s-r is a COB_s tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/COM
+coral:COM rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:comment
+                          ] ;
+          rdfs:comment "COM"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/COM-PAR
+coral:COM-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:COM ;
+              rdfs:label "COM-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "COM-PAR is a COM tag that has function of denoting a participle form." .
+
+
+###  http://purl.org/ncor-br/c-oral/COM-r
+coral:COM-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:COM ;
+            rdfs:label "COM-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "COM-r is a COM tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/DCT
+coral:DCT rdf:type owl:Class ;
+          rdfs:subClassOf coral:AUX ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:discourse_connector
+                          ] ;
+          rdfs:label "DCT"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "DCT is a AUX tag that has function of marking a discourse connector"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/DCT-PAR
+coral:DCT-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:DCT ;
+              rdfs:label "DCT-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "DCT-PAR is a DCT tag that has function of denoting a participle form."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/DCT-r
+coral:DCT-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:DCT ;
+            rdfs:label "DCT-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "DCT-r is a DCT tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/EMP
+coral:EMP rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:empty
+                          ] ;
+          rdfs:label "EMP"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "EMP is a tag that has function of marking an empty"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/EVD
+coral:EVD rdf:type owl:Class ;
+          rdfs:subClassOf coral:AUX ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:evidentiator
+                          ] ;
+          rdfs:label "EVD"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "EVD is a AUX tag that has function of marking an evidentiator"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/EVD-PAR
+coral:EVD-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:EVD ;
+              rdfs:label "EVD-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "EVD-PAR is a EVD tag that has function of denoting a participle form."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/EVD-r
+coral:EVD-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:EVD ;
+            rdfs:label "EVD-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "EVD-r is a EVD tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/EXP
+coral:EXP rdf:type owl:Class ;
+          rdfs:subClassOf coral:AUX ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:expressive
+                          ] ;
+          rdfs:label "EXP"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "EXP is a AUX tag that has function of marking an expressive"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/EXP-PAR
+coral:EXP-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:EXP ;
+              rdfs:label "EXP-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "EXP-PAR is a EXP tag that has function of denoting a participle form." .
+
+
+###  http://purl.org/ncor-br/c-oral/EXP-r
+coral:EXP-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:EXP ;
+            rdfs:label "EXP-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "EXP-r is a EXC tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/INP
+coral:INP rdf:type owl:Class ;
+          rdfs:subClassOf coral:AUX ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:incipit
+                          ] ;
+          rdfs:label "INP"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "INP is a AUX tag that has function of marking an incipit"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/INP-PAR
+coral:INP-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:INP ;
+              rdfs:label "INP-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "INP-PAR is a INP tag that has function of denoting a participle form."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/INP-r
+coral:INP-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:INP ;
+            rdfs:label "INP-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "INP-r is a INP tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/INT
+coral:INT rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:locutive_introducer
+                          ] ;
+          rdfs:label "INT"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "INT is a tag that has function of marking a locutive introducer"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/INT-PAR
+coral:INT-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:INT ;
+              rdfs:label "INT-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "INT-PAR is a INT tag that has function of denoting a participle form."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/INT-r
+coral:INT-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:INT ;
+            rdfs:label "INT-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "INT-r is a INT tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/PAR
+coral:PAR rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:parenthetic
+                          ] ;
+          rdfs:label "PAR"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "PAR is a tag that has function of marking a parenthetic"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/PAR-PAR
+coral:PAR-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:PAR ;
+              rdfs:label "PAR-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "PAR-PAR is a PAR tag that has function of denoting a participle form."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/PAR-r
+coral:PAR-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:PAR ;
+            rdfs:label "PAR-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "PAR-r is a PAR tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/PRL
+coral:PRL rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:list_of_parenthetic
+                          ] ;
+          rdfs:label "PRL"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "PRL is a tag that has function of marking a list of parenthetic"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/SCA
+coral:SCA rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:scanning
+                          ] ;
+          <http://www.w3.org/2004/02/skos/core#altLabel> "SCA"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "SCA is a tag that has function of marking a scanning"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/TMT
+coral:TMT rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:time_taking
+                          ] ;
+          rdfs:label "TMT"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "TMT is a tag that has function of marking a time taking"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/TOP
+coral:TOP rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:topic
+                          ] ;
+          rdfs:label "TOP"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "TOP is a tag that has function of marking a topic"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/TOP-PAR
+coral:TOP-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:TOP ;
+              rdfs:label "TOP-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "TOP-PAR is a TOP tag that has function of denoting a participle form."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/TOP-r
+coral:TOP-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:TOP ;
+            rdfs:label "TOP-r"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "TOP-r is a TOP tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/TOP_s
+coral:TOP_s rdf:type owl:Class ;
+            rdfs:subClassOf coral:tag ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty coral:marks ;
+                              owl:someValuesFrom coral:topic_subordinator
+                            ] ;
+            <http://www.w3.org/2004/02/skos/core#altLabel> "TOP_s"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "TOP_s is a tag that has function of marking a topic subordinator"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/TPL
+coral:TPL rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:topic_list
+                          ] ;
+          rdfs:label "TPL"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "TPL is a tag that has function of marking a topic list"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/UNC
+coral:UNC rdf:type owl:Class ;
+          rdfs:subClassOf coral:tag ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom coral:unclear
+                          ] ;
+          rdfs:label "UNC"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "UNC is a tag that has function of marking an unclear"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/UNC-PAR
+coral:UNC-PAR rdf:type owl:Class ;
+              rdfs:subClassOf coral:UNC ;
+              rdfs:label "UNC-PAR"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "UNC-PAR is a UNC tag that has function of denoting a participle form."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/UNC-r
+coral:UNC-r rdf:type owl:Class ;
+            rdfs:subClassOf coral:UNC ;
+            rdfs:label "UNC-r" ;
+            <http://www.w3.org/2004/02/skos/core#definition> "UNC-r is a UNC tag that has function of denoting an additional phonological feature."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/acoustic_quality
+coral:acoustic_quality rdf:type owl:Class ;
+                       rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000019> ;
+                       rdfs:label "acoustic quality"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/allocutive
+coral:allocutive rdf:type owl:Class ;
+                 rdfs:subClassOf coral:dialogic_auxiliary ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty coral:isMarkedBy ;
+                                   owl:someValuesFrom coral:ALL
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty coral:isMarkedBy ;
+                                   owl:allValuesFrom coral:ALL
+                                 ] ;
+                 rdfs:comment "An \"allocutive\" refers to a specific form of a verb or other grammatical element that varies according to the social characteristics of the addressee, such as their gender, age, or social status. This phenomenon is especially noted in languages like Basque, where allocutive forms are used to mark social distinctions directly in the verb morphology."@en ;
+                 rdfs:label "allocutive"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Allocutive is a dialogic auxiliary that has the function to annotate a specific form of a grammatical element varying according to the social characteristics of the addressee."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/appendix_of_comment
+coral:appendix_of_comment rdf:type owl:Class ;
+                          rdfs:subClassOf coral:textual_unit ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty coral:isMarkedBy ;
+                                            owl:someValuesFrom coral:APC
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty coral:isMarkedBy ;
+                                            owl:allValuesFrom coral:APC
+                                          ] ;
+                          rdfs:label "appendix of comment"@en ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "Appendix of comment is a textual unit that has the function to provide context, to explain unusual elements and offer interpretations about the primary data"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/appendix_of_topic
+coral:appendix_of_topic rdf:type owl:Class ;
+                        rdfs:subClassOf coral:textual_unit ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty coral:isMarkedBy ;
+                                          owl:someValuesFrom coral:APT
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty coral:isMarkedBy ;
+                                          owl:allValuesFrom coral:APT
+                                        ] ;
+                        rdfs:comment "An \"appendix of topic\" is a supplementary section or annotation that organizes and categorizes content within the corpus based on specific themes, subjects, or topics. This appendix helps in systematically categorizing and retrieving data related to particular topics of interest, facilitating focused analysis and research."@en ;
+                        rdfs:label "appendix of topic"@en ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "Appendix of topic is a textual unit that has the function to organizes content within the corpus based on specific topics."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/audio_file
+coral:audio_file rdf:type owl:Class ;
+                 rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty coral:isComposedBy ;
+                                   owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020002>
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty coral:records ;
+                                   owl:someValuesFrom coral:speechProcess
+                                 ] ;
+                 rdfs:label "audio file"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/bound_comment
+coral:bound_comment rdf:type owl:Class ;
+                    rdfs:subClassOf coral:textual_unit ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty coral:isMarkedBy ;
+                                      owl:someValuesFrom coral:COB
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty coral:isMarkedBy ;
+                                      owl:allValuesFrom coral:COB
+                                    ] ;
+                    rdfs:comment "A \"bound comment\" refers to an annotation or note that is tightly linked to a specific segment of the text, such as a word, phrase, or phonological unit. This type of comment is used to provide detailed information or analysis that is directly relevant to that specific segment, ensuring precise and context-specific annotations."@en ;
+                    rdfs:label "bound comment"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Bound comment is an a textual unit that has the function to annotate a specific segment of the text, such as a word, phrase, or phonological unit."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/business_speech_process
+coral:business_speech_process rdf:type owl:Class ;
+                              rdfs:subClassOf coral:speechProcess ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                owl:someValuesFrom coral:formal_participant
+                                              ] ;
+                              rdfs:label "business speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/businessman
+coral:businessman rdf:type owl:Class ;
+                  rdfs:subClassOf coral:formal_participant ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                    owl:someValuesFrom coral:business_speech_process
+                                  ] ;
+                  rdfs:label "businessman"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Businessman is a formal participant that is realized in a business speech process."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/comment
+coral:comment rdf:type owl:Class ;
+              rdfs:subClassOf coral:textual_unit ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty coral:isMarkedBy ;
+                                owl:someValuesFrom coral:COM
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty coral:isMarkedBy ;
+                                owl:allValuesFrom coral:COM
+                              ] ;
+              rdfs:comment "a \"comment\" refers to an annotation or note added to the corpus text that provides additional information, explanations, or clarifications about specific parts of the text. Comments are essential for offering insights that go beyond the raw data, helping researchers and analysts understand the nuances and complexities of the linguistic material."@en ;
+              rdfs:label "comment" ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Comment is an a textual unit that has the function to annotate explanations about specific parts of the text."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/conative
+coral:conative rdf:type owl:Class ;
+               rdfs:subClassOf coral:dialogic_auxiliary ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty coral:isMarkedBy ;
+                                 owl:someValuesFrom coral:conative
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty coral:isMarkedBy ;
+                                 owl:allValuesFrom coral:conative
+                               ] ;
+               rdfs:comment "A \"conative\" refers to a linguistic expression that indicates an attempt or effort to perform an action, often directed towards affecting the listener or another entity. The term is derived from the Latin word \"conari,\" meaning \"to try.\" Conative elements are typically verbs or verb forms that express this attempt or effort."@en ;
+               rdfs:label "conative"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Conative is a dialogic auxiliary that has the function to annotate a linguistic expression indicating an attempt or effort to perform an action, directed towards the listener."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/conference_speech_process
+coral:conference_speech_process rdf:type owl:Class ;
+                                rdfs:subClassOf coral:speechProcess ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                  owl:someValuesFrom coral:researcher
+                                                ] ;
+                                rdfs:label "conference speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/conversation_speech_process
+coral:conversation_speech_process rdf:type owl:Class ;
+                                  rdfs:subClassOf coral:speechProcess ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                    owl:someValuesFrom coral:informal_participant
+                                                  ] ;
+                                  rdfs:label "conversation speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/date
+coral:date rdf:type owl:Class ;
+           rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000202> .
+
+
+###  http://purl.org/ncor-br/c-oral/dialogic_auxiliary
+coral:dialogic_auxiliary rdf:type owl:Class ;
+                         rdfs:subClassOf coral:informational_unit ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty coral:isMarkedBy ;
+                                           owl:allValuesFrom coral:INP
+                                         ] ;
+                         rdfs:comment "A dialogic auxiliary unit is a segment of speech that supports the dialogue but does not carry the primary informational content. These units help manage the flow of conversation, signal discourse functions, and aid in the interactional aspects of communication. Dialogic auxiliary units include: discourse markers, interjections, fillers, backchannels."@en ;
+                         rdfs:label "dialogic auxiliary"@en ;
+                         <http://www.w3.org/2004/02/skos/core#definition> """Dialogic auxiliary is an informational unit that has the function to annotate turn-taking, speaker roles, interruptions, or conversational strategies.
+
+A dialogic auxiliary unit is a informational unit that supports the dialogue but does not carry the primary informational content. Dialogic auxiliary units include: discourse markers, interjections, fillers, backchannels."""@en .
+
+
+###  http://purl.org/ncor-br/c-oral/dialogues_speech_process
+coral:dialogues_speech_process rdf:type owl:Class ;
+                               rdfs:subClassOf coral:speechProcess ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                 owl:someValuesFrom coral:informal_participant
+                                               ] ;
+                               rdfs:label "dialogues speech process" .
+
+
+###  http://purl.org/ncor-br/c-oral/discourse_connector
+coral:discourse_connector rdf:type owl:Class ;
+                          rdfs:subClassOf coral:textual_unit ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty coral:isMarkedBy ;
+                                            owl:someValuesFrom coral:DCT
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty coral:isMarkedBy ;
+                                            owl:allValuesFrom coral:DCT
+                                          ] ;
+                          rdfs:comment "A \"discourse connector\" (also known as a discourse marker) is a word or phrase that helps to manage the flow and structure of discourse by linking sentences, clauses, or segments of text. These connectors do not typically contribute to the propositional content of the discourse but instead serve to guide the listener or reader through the logical, temporal, or causal relationships between ideas. Examples of discourse connectors include words and phrases like \"however,\" \"therefore,\" \"in addition,\" \"on the other hand,\" and \"meanwhile.\""@en ;
+                          rdfs:label "discourse connector"@en ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "Discourse connector is a textual unit that has the function to annotate links among sentences, clauses, or segments of text."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/duration
+coral:duration rdf:type owl:Class ;
+               rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000202> ;
+               rdfs:comment "duration"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/duration_of_text
+coral:duration_of_text rdf:type owl:Class ;
+                       rdfs:subClassOf coral:internal_metadata ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty coral:isAbout ;
+                                         owl:someValuesFrom coral:duration
+                                       ] ;
+                       rdfs:comment "duration of the text" ;
+                       rdfs:label "duration of text"@en ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "Duration of text is a metadata that records the number of minutes of speech that a text represents"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/empty
+coral:empty rdf:type owl:Class ;
+            rdfs:subClassOf coral:non_informational_unit ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty coral:isMarkedBy ;
+                              owl:someValuesFrom coral:EMP
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty coral:isMarkedBy ;
+                              owl:allValuesFrom coral:EMP
+                            ] ;
+            rdfs:comment "An \"empty\" typically refers to a placeholder or annotation for elements that are not overtly present in the surface representation of the text but are nonetheless significant for linguistic analysis."@en ;
+            rdfs:label "empty"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Empty is a non informational unit that has the function to annotate elements not present in the surface representation of the text but are significant for linguistic analysis."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/evidentiator
+coral:evidentiator rdf:type owl:Class ;
+                   rdfs:subClassOf coral:dialogic_auxiliary ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty coral:isMarkedBy ;
+                                     owl:someValuesFrom coral:EVD
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty coral:isMarkedBy ;
+                                     owl:allValuesFrom coral:EVD
+                                   ] ;
+                   rdfs:comment "An \"evidentiator\" refers to a linguistic element that indicates the source or nature of the speaker's evidence for the statement they are making. Evidentiators provide information about how the speaker knows what they are saying, whether it is through direct observation, hearsay, inference, or some other means."@en ;
+                   rdfs:label "evidentiator"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Evidentiator is a dialogic auxiliary that has the function to annotate the source of the speaker's evidence for the statement they are making."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/expressive
+coral:expressive rdf:type owl:Class ;
+                 rdfs:subClassOf coral:dialogic_auxiliary ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty coral:isMarkedBy ;
+                                   owl:someValuesFrom coral:EXP
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty coral:isMarkedBy ;
+                                   owl:allValuesFrom coral:EXP
+                                 ] ;
+                 rdfs:comment "An \"expressive\" (or expressive element) refers to a linguistic element used to convey the speaker's emotions, attitudes, or subjective responses. Expressives are often used to communicate feelings such as surprise, joy, frustration, or contempt, and they can include interjections, exclamations, and certain types of adverbs or adjectives."@en ;
+                 rdfs:label "expressive"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Expressive isa dialogic auxiliary that has the function to annotate a linguistic element use d to convey the speaker's emotions, attitudes, or subjective responses."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/external_metadata
+coral:external_metadata rdf:type owl:Class ;
+                        rdfs:subClassOf coral:metadata ,
+                                        [ rdf:type owl:Class ;
+                                          owl:complementOf [ rdf:type owl:Restriction ;
+                                                             owl:onProperty coral:storedWith ;
+                                                             owl:someValuesFrom coral:text
+                                                           ]
+                                        ] ;
+                        rdfs:label "external metadata"@en ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "External metadata is a metadata that is stored separately from the resource."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/formal_participant
+coral:formal_participant rdf:type owl:Class ;
+                         rdfs:subClassOf coral:participant ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                           owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                owl:unionOf ( coral:business_speech_process
+                                                                              coral:conference_speech_process
+                                                                              coral:law_speech_process
+                                                                              coral:media_speech_process
+                                                                              coral:medical_speech_process
+                                                                              coral:political_debate_speech_process
+                                                                              coral:political_speech_process
+                                                                              coral:preaching_speech_process
+                                                                              coral:professional_explanation_process
+                                                                              coral:teaching_speech_process
+                                                                            )
+                                                              ]
+                                         ] ;
+                         rdfs:label "formal participant"@en ;
+                         <http://www.w3.org/2004/02/skos/core#definition> "Formal participant is a participant that is realized in a specific speech process."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/incipit
+coral:incipit rdf:type owl:Class ;
+              rdfs:subClassOf coral:dialogic_auxiliary ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty coral:isMarkedBy ;
+                                owl:someValuesFrom coral:INP
+                              ] ;
+              rdfs:comment "An \"incipit\" refers to the opening words or phrases of a text or a particular section of a text."@en ;
+              rdfs:label "incipit"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Incipit of topic is a dialogic auxiliary that has the function to annotate the opening words or phrases of a text."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/informal_participant
+coral:informal_participant rdf:type owl:Class ;
+                           rdfs:subClassOf coral:participant ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                             owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                  owl:unionOf ( coral:conversation_speech_process
+                                                                                coral:dialogues_speech_process
+                                                                                coral:monologues_speech_process
+                                                                                coral:telephone_speech_process
+                                                                              )
+                                                                ]
+                                           ] ;
+                           rdfs:label "informal participant"@en ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "Informal participant is a participant that is realized in a conversation speech process or dialogues speech process or a monologues speech process or a telephone speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/informational_unit
+coral:informational_unit rdf:type owl:Class ;
+                         rdfs:subClassOf coral:prosodic_unit ;
+                         rdfs:comment "unit tagged with COM; COB; COB_s CMM; TOP; APC; APT; PAR; INT; DCT; CNT; INP; EXP; ALL; EVD; UNC; any tag followed by -r (e.g. TOP-r, etc); any tag followed by -PAR (e.g. TOP-PAR)"@en ;
+                         rdfs:label "informational unit"@en ;
+                         <http://www.w3.org/2004/02/skos/core#definition> "Informational unit is a prosodic unit tagged with COM; COB; COB_s; CMM; TOP; APC; APT; PAR; INT; DCT; CNT; INP; EXP; ALL; EVD; UNC or any tag followed by -r or any tag followed by -PAR"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/internal_metadata
+coral:internal_metadata rdf:type owl:Class ;
+                        rdfs:subClassOf coral:metadata ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty coral:storedWith ;
+                                          owl:someValuesFrom coral:text
+                                        ] ;
+                        rdfs:label "internal metadata"@en ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "Internal metadata is a metadata that is embedded within the resource itself."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/interrupted_terminated_sequence
+coral:interrupted_terminated_sequence rdf:type owl:Class ;
+                                      rdfs:subClassOf coral:terminated_sequence ;
+                                      rdfs:label "interrupted terminated sequence"@en ;
+                                      <http://www.w3.org/2004/02/skos/core#definition> "Interrupted terminated sequence is a terminated sequence that refers to speech cuted off or unfinished due to interruptions."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/interview_speech_process
+coral:interview_speech_process rdf:type owl:Class ;
+                               rdfs:subClassOf coral:media_speech_process ;
+                               rdfs:label "interview speech process"@en ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "Interview speech process is a media speech process that is composed by interviews"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/intonation
+coral:intonation rdf:type owl:Class ;
+                 rdfs:subClassOf coral:prosodic_features .
+
+
+###  http://purl.org/ncor-br/c-oral/journalist
+coral:journalist rdf:type owl:Class ;
+                 rdfs:subClassOf coral:formal_participant ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                   owl:someValuesFrom coral:media_speech_process
+                                 ] ;
+                 rdfs:label "journalist"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Journalist is a formal participant that is realized in a media speech process."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/law_speech_process
+coral:law_speech_process rdf:type owl:Class ;
+                         rdfs:subClassOf coral:speechProcess ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                           owl:someValuesFrom coral:lawyer
+                                         ] ;
+                         rdfs:label "law speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/lawyer
+coral:lawyer rdf:type owl:Class ;
+             rdfs:subClassOf coral:formal_participant ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                               owl:someValuesFrom coral:law_speech_process
+                             ] ;
+             rdfs:label "lawyer"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Layer is a formal participant that is realized in a law speech process."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/list_of_parenthetic
+coral:list_of_parenthetic rdf:type owl:Class ;
+                          rdfs:subClassOf coral:textual_unit ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty coral:isMarkedBy ;
+                                            owl:someValuesFrom coral:list_of_parenthetic
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty coral:isMarkedBy ;
+                                            owl:allValuesFrom coral:list_of_parenthetic
+                                          ] ;
+                          rdfs:comment "A \"list of parenthetics\" in the markup of a corpus refers to a collection of annotations or elements within the text that are enclosed within parentheses and are used to provide additional information, comments, or explanations. These parenthetical elements are organized sequentially in a list format, typically separated by commas or other appropriate punctuation marks."@en ;
+                          rdfs:label "list of parenthetic"@en ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "list of parenthetic is a textual unit that has the function to annotate elements within the text that are enclosed within parentheses."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/locutive_introducer
+coral:locutive_introducer rdf:type owl:Class ;
+                          rdfs:subClassOf coral:textual_unit ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty coral:isMarkedBy ;
+                                            owl:someValuesFrom coral:INT
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty coral:isMarkedBy ;
+                                            owl:allValuesFrom coral:INT
+                                          ] ;
+                          rdfs:comment "A \"locutive introducer\" refers to an element that introduces direct speech or quotations within a text. This term comes from \"locution,\" which pertains to speech or utterance. Locutive introducers are crucial for identifying and annotating the boundaries and context of reported speech or dialogue within the corpus."@en ;
+                          rdfs:label "locutive introducer"@en ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "Locutive introducer is a textual unit that has the function to introduces direct speech or quotations within a text."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/media_speech_process
+coral:media_speech_process rdf:type owl:Class ;
+                           rdfs:subClassOf coral:speechProcess ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                             owl:someValuesFrom coral:journalist
+                                           ] ;
+                           rdfs:label "media speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/medical_speech_process
+coral:medical_speech_process rdf:type owl:Class ;
+                             rdfs:subClassOf coral:speechProcess ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                               owl:someValuesFrom <http://purl.org/ncor-br/patient>
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                               owl:someValuesFrom coral:physician
+                                             ] ;
+                             rdfs:label "medical speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/metadata
+coral:metadata rdf:type owl:Class ;
+               rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000300> ;
+               rdfs:label "metadata"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Metadata is a textual entity that is about another information content entity."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/metadata_date
+coral:metadata_date rdf:type owl:Class ;
+                    rdfs:subClassOf coral:external_metadata ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty coral:isAbout ;
+                                      owl:someValuesFrom coral:date
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty coral:isAbout ;
+                                      owl:allValuesFrom coral:date
+                                    ] ;
+                    rdfs:label "metadata date"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/metadata_of_acoustic_quality
+coral:metadata_of_acoustic_quality rdf:type owl:Class ;
+                                   rdfs:subClassOf coral:external_metadata ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty coral:isAbout ;
+                                                     owl:someValuesFrom coral:acoustic_quality
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty coral:isAbout ;
+                                                     owl:allValuesFrom coral:acoustic_quality
+                                                   ] ;
+                                   rdfs:label "metadata of acoustic quality"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/metadata_of_file
+coral:metadata_of_file rdf:type owl:Class ;
+                       rdfs:subClassOf coral:external_metadata ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty coral:isAbout ;
+                                         owl:someValuesFrom [ rdf:type owl:Class ;
+                                                              owl:unionOf ( coral:audio_file
+                                                                            coral:textual_file
+                                                                          )
+                                                            ]
+                                       ] ;
+                       rdfs:label "metadata of file"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/metadata_of_local
+coral:metadata_of_local rdf:type owl:Class ;
+                        rdfs:subClassOf coral:external_metadata ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty coral:isAbout ;
+                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000029>
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty coral:isAbout ;
+                                          owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000029>
+                                        ] ;
+                        rdfs:label "metadata of local"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/metadata_of_participant
+coral:metadata_of_participant rdf:type owl:Class ;
+                              rdfs:subClassOf coral:external_metadata ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty coral:isAbout ;
+                                                owl:someValuesFrom <http://www.ontologyrepository.com/CommonCoreOntologies/agent>
+                                              ] ;
+                              rdfs:label "metadata of participant"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/metadata_of_situation
+coral:metadata_of_situation rdf:type owl:Class ;
+                            rdfs:subClassOf coral:external_metadata ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty coral:isAbout ;
+                                              owl:someValuesFrom coral:situation
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty coral:isAbout ;
+                                              owl:allValuesFrom coral:situation
+                                            ] ;
+                            rdfs:label "metadata of situation"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/metadata_of_source
+coral:metadata_of_source rdf:type owl:Class ;
+                         rdfs:subClassOf coral:external_metadata ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty coral:isAbout ;
+                                           owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                owl:unionOf ( coral:audio_file
+                                                                              coral:textual_file
+                                                                            )
+                                                              ]
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty coral:isAbout ;
+                                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                                               owl:unionOf ( coral:audio_file
+                                                                             coral:textual_file
+                                                                           )
+                                                             ]
+                                         ] ;
+                         rdfs:label "metadata of source"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/metadata_of_subject
+coral:metadata_of_subject rdf:type owl:Class ;
+                          rdfs:subClassOf coral:external_metadata ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty coral:isAbout ;
+                                            owl:someValuesFrom coral:speechProcess
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty coral:isAbout ;
+                                            owl:allValuesFrom coral:speechProcess
+                                          ] ;
+                          rdfs:label "metadata of subject"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/metadata_title
+coral:metadata_title rdf:type owl:Class ;
+                     rdfs:subClassOf coral:external_metadata ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty coral:isAbout ;
+                                       owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0000305>
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty coral:isAbout ;
+                                       owl:allValuesFrom <http://purl.obolibrary.org/obo/IAO_0000305>
+                                     ] ;
+                     rdfs:label "metadata title"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/metereology_speech_process
+coral:metereology_speech_process rdf:type owl:Class ;
+                                 rdfs:subClassOf coral:media_speech_process ;
+                                 rdfs:label "metereology speech process"@en ;
+                                 <http://www.w3.org/2004/02/skos/core#definition> "Metereological speech process is a media speech process that is composed by metereological news"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/monologues_speech_process
+coral:monologues_speech_process rdf:type owl:Class ;
+                                rdfs:subClassOf coral:speechProcess ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                  owl:someValuesFrom coral:informal_participant
+                                                ] ;
+                                rdfs:label "monologues speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/multiple_comment
+coral:multiple_comment rdf:type owl:Class ;
+                       rdfs:subClassOf coral:textual_unit ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty coral:isMarkedBy ;
+                                         owl:someValuesFrom coral:CMM
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty coral:isMarkedBy ;
+                                         owl:allValuesFrom coral:CMM
+                                       ] ;
+                       rdfs:comment "a \"multiple comment\" refers to an annotation that applies to multiple elements within the corpus text. These comments are used to provide additional information, explanations, or clarifications that are relevant to more than one part of the text, ensuring that the annotation is efficiently managed and clearly associated with all pertinent segments."@en ;
+                       rdfs:label "multiple comment"@en ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "Multiple comment is a textual unit that has the function to provide  explanations relevant to more than one part of the text."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/news_speech_process
+coral:news_speech_process rdf:type owl:Class ;
+                          rdfs:subClassOf coral:media_speech_process ;
+                          rdfs:label "news speech process"@en ,
+                                     "News speech process is a media speech process that is composed by news." .
+
+
+###  http://purl.org/ncor-br/c-oral/non_informational_unit
+coral:non_informational_unit rdf:type owl:Class ;
+                             rdfs:subClassOf coral:prosodic_unit ;
+                             rdfs:comment "unit tagged with SCA; EMP; TMT; any tag followed by -r (e.g. TOP-r, etc); any tag followed by -PAR (e.g. TOP-PAR)"@en ;
+                             rdfs:label "non informational unit"@en ;
+                             <http://www.w3.org/2004/02/skos/core#definition> "Non informational unit is a prosodic unit that is tagged with SCA; EMP; TMT or any tag followed by -r or any tag followed by -PAR"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/non_tagged_text
+coral:non_tagged_text rdf:type owl:Class ;
+                      rdfs:subClassOf coral:text ,
+                                      [ rdf:type owl:Class ;
+                                        owl:complementOf [ rdf:type owl:Restriction ;
+                                                           owl:onProperty coral:isMarkedBy ;
+                                                           owl:someValuesFrom coral:tag
+                                                         ]
+                                      ] ;
+                      rdfs:label "non tagged text"@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "Non tagged text is a text that is not marked with tags."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/number_of_fragmentation_phenomena
+coral:number_of_fragmentation_phenomena rdf:type owl:Class ;
+                                        rdfs:subClassOf coral:internal_metadata ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty coral:isAbout ;
+                                                          owl:someValuesFrom coral:informational_unit
+                                                        ] ;
+                                        rdfs:comment "how many words preceded by & in the text"@en ;
+                                        rdfs:label "number of fragmentation phenomena"@en ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "Number of fragmentation phenomena is a metadata that records how many words preceded by symbol \"&\" exist in the text."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/number_of_interrupted_terminated_sequences
+coral:number_of_interrupted_terminated_sequences rdf:type owl:Class ;
+                                                 rdfs:subClassOf coral:internal_metadata ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty coral:isAbout ;
+                                                                   owl:someValuesFrom coral:interrupted_terminated_sequence
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty coral:isAbout ;
+                                                                   owl:allValuesFrom coral:interrupted_terminated_sequence
+                                                                 ] ;
+                                                 rdfs:comment "Number of interrupted terminated sequences is a metadata that records the number of + in the text"@en ;
+                                                 rdfs:label "number of interrupted terminated sequences"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Number of interrupted terminated sequences is a internal metadata that represents the number of symbols \"+\" found in the text."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/number_of_intonation_units
+coral:number_of_intonation_units rdf:type owl:Class ;
+                                 rdfs:subClassOf coral:internal_metadata ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty coral:isAbout ;
+                                                   owl:someValuesFrom coral:prosodic_unit
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty coral:isAbout ;
+                                                   owl:allValuesFrom coral:prosodic_unit
+                                                 ] ;
+                                 rdfs:comment "how many /, //, + in the text" ;
+                                 rdfs:label "number of intonation units"@en ;
+                                 <http://www.w3.org/2004/02/skos/core#definition> "Number of intonation units is a metadata that records how many symbols \"/\", \"//\" and \"+\" occurs within the text."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/number_of_realized_terminated_sequences
+coral:number_of_realized_terminated_sequences rdf:type owl:Class ;
+                                              rdfs:subClassOf coral:internal_metadata ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty coral:isAbout ;
+                                                                owl:someValuesFrom coral:realized_terminated_sequence
+                                                              ] ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty coral:isAbout ;
+                                                                owl:allValuesFrom coral:realized_terminated_sequence
+                                                              ] ;
+                                              rdfs:comment "number of // in the text"@en ;
+                                              rdfs:label "number of realized terminated sequences"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "Number of realized terminated sequences is metadata that records the number of symbols \"//\" within the text."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/number_of_retracting
+coral:number_of_retracting rdf:type owl:Class ;
+                           rdfs:subClassOf coral:internal_metadata ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty coral:isAbout ;
+                                             owl:someValuesFrom coral:retracting_sequence
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty coral:isAbout ;
+                                             owl:allValuesFrom coral:retracting_sequence
+                                           ] ;
+                           rdfs:comment "how many [/n] in the text"@en ;
+                           rdfs:label "number of retracting"@en ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "Number of retracting is a metadata that records how many symbos \"[/n]\" exists in the text."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/number_of_terminated_sequences
+coral:number_of_terminated_sequences rdf:type owl:Class ;
+                                     rdfs:subClassOf coral:internal_metadata ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty coral:isAbout ;
+                                                       owl:someValuesFrom coral:terminated_sequence
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty coral:isAbout ;
+                                                       owl:allValuesFrom coral:terminated_sequence
+                                                     ] ;
+                                     rdfs:comment "from the symbols // or + and the next // or + (how many TUs in the text)"@en ;
+                                     rdfs:label "number of terminated sequences"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "Number of terminated sequences is a metadata that records the number of texts between the symbols \"//\" or \"+\" and the next \"//\" or \"+\""@en .
+
+
+###  http://purl.org/ncor-br/c-oral/number_of_time_taking
+coral:number_of_time_taking rdf:type owl:Class ;
+                            rdfs:subClassOf coral:internal_metadata ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty coral:isAbout ;
+                                              owl:someValuesFrom coral:time_taking
+                                            ] ;
+                            rdfs:label "number of time taking"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/number_of_turns
+coral:number_of_turns rdf:type owl:Class ;
+                      rdfs:subClassOf coral:internal_metadata ;
+                      rdfs:comment "AXIOMS TO-DO"@en ,
+                                   "how many times a different speaker takes the floor (how many turns in a text)"@en ;
+                      rdfs:label "number of turns"@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "Number of turns is a metadata that records how many times a different speaker takes the floor"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/number_of_words
+coral:number_of_words rdf:type owl:Class ;
+                      rdfs:subClassOf coral:internal_metadata ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty coral:isAbout ;
+                                        owl:someValuesFrom coral:word-level_sequence
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty coral:isAbout ;
+                                        owl:allValuesFrom coral:word-level_sequence
+                                      ] ;
+                      rdfs:label "number of words"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/open_information
+coral:open_information rdf:type owl:Class ;
+                       rdfs:subClassOf coral:external_metadata ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty coral:isAbout ;
+                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000001>
+                                       ] ;
+                       rdfs:label "open information"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/parenthetic
+coral:parenthetic rdf:type owl:Class ;
+                  rdfs:subClassOf coral:textual_unit ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty coral:isMarkedBy ;
+                                    owl:someValuesFrom coral:PAR
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty coral:isMarkedBy ;
+                                    owl:allValuesFrom coral:PAR
+                                  ] ;
+                  rdfs:comment "a \"parenthetic\" refers to an annotation or element within the text that provides additional information, clarification, or commentary that is not directly part of the main sentence or utterance. Parenthetics are enclosed within parentheses and are typically used to offer supplementary details, explanations, or comments that provide context or elaboration on the main content."@en ;
+                  rdfs:label "parenthetic"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Parenthetic is a textual unit that has the function to annotate an element which is not part of the main sentence or utterance."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/participant
+coral:participant rdf:type owl:Class ;
+                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                    owl:someValuesFrom coral:speechProcess
+                                  ] ;
+                  rdfs:label "participant"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "A participant is a role that is realized in the speech process and recorded in a corpus."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/participant_age
+coral:participant_age rdf:type owl:Class ;
+                      rdfs:subClassOf coral:metadata_of_participant ;
+                      rdfs:label "participant age"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/participant_educational_level
+coral:participant_educational_level rdf:type owl:Class ;
+                                    rdfs:subClassOf coral:metadata_of_participant ;
+                                    rdfs:label "participant educational level"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/participant_medical_data
+coral:participant_medical_data rdf:type owl:Class ;
+                               rdfs:subClassOf coral:metadata_of_participant ;
+                               rdfs:label "participant medical data"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/participant_occupation
+coral:participant_occupation rdf:type owl:Class ;
+                             rdfs:subClassOf coral:metadata_of_participant ;
+                             rdfs:label "participant occupation"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/participant_place_of_origin
+coral:participant_place_of_origin rdf:type owl:Class ;
+                                  rdfs:subClassOf coral:metadata_of_participant ;
+                                  rdfs:label "participant place of origin"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/participant_role_in_record
+coral:participant_role_in_record rdf:type owl:Class ;
+                                 rdfs:subClassOf coral:metadata_of_participant ;
+                                 rdfs:label "participant role in record"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/participant_sex
+coral:participant_sex rdf:type owl:Class ;
+                      rdfs:subClassOf coral:metadata_of_participant ;
+                      rdfs:label "participant sex"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/patient_speech_process
+coral:patient_speech_process rdf:type owl:Class ;
+                             rdfs:subClassOf coral:speechProcess ;
+                             rdfs:label "patient speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/pattern
+coral:pattern rdf:type owl:Class ;
+              rdfs:subClassOf coral:prosodic_unit ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty coral:isComposedBy ;
+                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                     owl:unionOf ( coral:bound_comment
+                                                                   coral:comment
+                                                                 )
+                                                   ]
+                              ] ;
+              rdfs:comment "A pattern is made up of a nuclear prosodic unit (COM or COB) that can be alone or have non-nuclear units around it."@en ;
+              rdfs:label "pattern"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Patterns is prosodic unit that combines any tags in a terminated sequence."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/physician
+coral:physician rdf:type owl:Class ;
+                rdfs:subClassOf coral:formal_participant ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                  owl:someValuesFrom coral:medical_speech_process
+                                ] ;
+                rdfs:label "physician"@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Physician is a formal participant that is realized in a medical speech process."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/pitch
+coral:pitch rdf:type owl:Class ;
+            rdfs:subClassOf coral:intonation ;
+            rdfs:label "pitch"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/political_debate_speech_process
+coral:political_debate_speech_process rdf:type owl:Class ;
+                                      rdfs:subClassOf coral:speechProcess ,
+                                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                                               owl:someValuesFrom coral:informal_participant
+                                                                             ]
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                                               owl:someValuesFrom coral:politician
+                                                                             ]
+                                                                           ) ;
+                                                        rdf:type owl:Class
+                                                      ] ;
+                                      rdfs:label "political debate speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/political_speech_process
+coral:political_speech_process rdf:type owl:Class ;
+                               rdfs:subClassOf coral:speechProcess ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                 owl:someValuesFrom coral:politician
+                                               ] ;
+                               rdfs:label "political speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/politician
+coral:politician rdf:type owl:Class ;
+                 rdfs:subClassOf coral:formal_participant ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                   owl:someValuesFrom [ rdf:type owl:Class ;
+                                                        owl:unionOf ( coral:political_debate_speech_process
+                                                                      coral:political_speech_process
+                                                                    )
+                                                      ]
+                                 ] ;
+                 rdfs:label "politician"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Politician is a formal participant that is realized in a political speech process or a political debate speech process."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/preaching_speech_process
+coral:preaching_speech_process rdf:type owl:Class ;
+                               rdfs:subClassOf coral:speechProcess ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                 owl:someValuesFrom coral:priest
+                                               ] ;
+                               rdfs:label "preaching speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/priest
+coral:priest rdf:type owl:Class ;
+             rdfs:subClassOf coral:formal_participant ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                               owl:someValuesFrom coral:preaching_speech_process
+                             ] ;
+             rdfs:label "priest"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Priest is a formal participant that is realized in a preaching speech process."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/professional
+coral:professional rdf:type owl:Class ;
+                   rdfs:subClassOf coral:formal_participant ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                     owl:someValuesFrom coral:professional_explanation_process
+                                   ] ;
+                   rdfs:label "professional"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Professional is a formal participant that is realized in a professional explanation process."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/professional_explanation_process
+coral:professional_explanation_process rdf:type owl:Class ;
+                                       rdfs:subClassOf coral:speechProcess ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                         owl:someValuesFrom coral:professional
+                                                       ] ;
+                                       rdfs:label "professional explanation process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/prosodic_features
+coral:prosodic_features rdf:type owl:Class ;
+                        rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000019> ;
+                        rdfs:label "prosodic features"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/prosodic_unit
+coral:prosodic_unit rdf:type owl:Class ;
+                    rdfs:subClassOf coral:segment_of_text ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty coral:isAbout ;
+                                      owl:someValuesFrom coral:prosodic_features
+                                    ] ;
+                    rdfs:comment "A prosodic unit is a segment of speech characterized by a coherent pattern of prosodic features, such as pitch, rhythm, stress, and intonation."@en ,
+                                 "unit tagged with COM; COB; COB_s CMM; TOP; APC; APT; PAR; INT; DCT; CNT; INP; EXP; ALL; EVD; UNC; any tag followed by -r (e.g. TOP-r, etc); any tag followed by -PAR (e.g. TOP-PAR)" ;
+                    rdfs:label "prosodic unit"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Prosodic unit it a segment of text that records how many units are tagged with the tags COM; COB; COB_s; CMM; TOP; APC; APT; PAR; INT; DCT; CNT; INP; EXP; ALL; EVD; UNC; or any tag followed by -r or any tag followed by -PAR"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/realized_terminated_sequence
+coral:realized_terminated_sequence rdf:type owl:Class ;
+                                   rdfs:subClassOf coral:terminated_sequence ;
+                                   rdfs:label "realized terminated sequence"@en ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "Realized terminated sequence is a terminated sequence that refers to speech fully completed."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/reportage_speech_process
+coral:reportage_speech_process rdf:type owl:Class ;
+                               rdfs:subClassOf coral:media_speech_process ;
+                               rdfs:label "reportage speech process"@en ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "Reportage speech process is a media speech process that is composed by reportages"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/researcher
+coral:researcher rdf:type owl:Class ;
+                 rdfs:subClassOf coral:formal_participant ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                   owl:someValuesFrom coral:conference_speech_process
+                                 ] ;
+                 rdfs:label "researcher"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Researcher is a formal participant that is realized in a conference speech process."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/retracted_word
+coral:retracted_word rdf:type owl:Class ;
+                     rdfs:subClassOf coral:internal_metadata ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty coral:isAbout ;
+                                       owl:someValuesFrom coral:word-level_sequence
+                                     ] ;
+                     rdfs:comment "total of n in text (sum of all the n  in [/n] in the text)"@en ;
+                     rdfs:label "retracted word"@en ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "Retracted word is a internal metadata that records the total of symbols \"n\" in text."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/retracting_sequence
+coral:retracting_sequence rdf:type owl:Class ;
+                          rdfs:subClassOf coral:informational_unit ;
+                          rdfs:label "retracting sequence"@en ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "Retracting sequence is an informational unit that a speaker uses to backtrack or revise a part of their utterance."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/rhythm
+coral:rhythm rdf:type owl:Class ;
+             rdfs:subClassOf coral:prosodic_features ;
+             rdfs:label "rhythm"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/scanning
+coral:scanning rdf:type owl:Class ;
+               rdfs:subClassOf coral:non_informational_unit ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty coral:isMarkedBy ;
+                                 owl:someValuesFrom coral:SCA
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty coral:isMarkedBy ;
+                                 owl:allValuesFrom coral:SCA
+                               ] ;
+               rdfs:comment "\"Scanning\" typically refers to the process of systematically analyzing or examining the text to identify and annotate specific linguistic features, patterns, or phenomena. This annotation process involves carefully scrutinizing the corpus data to extract relevant information that contributes to linguistic analysis."@en ,
+                            "(TO BE CHECKED)"@en ;
+               rdfs:label "scanning"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Scanning is a non informational unit that has the function to annotate the process of scanning"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/schizophrenics_speech_with_video
+coral:schizophrenics_speech_with_video rdf:type owl:Class ;
+                                       rdfs:subClassOf coral:patient_speech_process ;
+                                       rdfs:label "schizophrenics speech with video"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/schizophrenics_speech_without_video
+coral:schizophrenics_speech_without_video rdf:type owl:Class ;
+                                          rdfs:subClassOf coral:patient_speech_process ;
+                                          rdfs:label "schizophrenics speech without video"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/scientific_press_speech
+coral:scientific_press_speech rdf:type owl:Class ;
+                              rdfs:subClassOf coral:media_speech_process ;
+                              rdfs:label "scientific press speech"@en ;
+                              <http://www.w3.org/2004/02/skos/core#definition> "Scientific speech process is a media speech process that is composed by scientific news"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/segment_of_text
+coral:segment_of_text rdf:type owl:Class ;
+                      rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000300> ;
+                      rdfs:comment "A segment of text is a distinct and coherent portion of a written or spoken discourse, which can be delineated based on syntactic, semantic, functional, or structural criteria. It serves as a fundamental unit for organizing, analyzing, and interpreting language within various contexts, such as literary analysis, computational linguistics, and discourse studies."@en ;
+                      rdfs:label "segment of text"@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "A segment of text is a textual entity representing a portion of a written or spoken discourse, which can be delineated based on syntactic, semantic, functional, or structural criteria."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/situation
+coral:situation rdf:type owl:Class ;
+                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000011> ;
+                rdfs:label "situation"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/speaker
+coral:speaker rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/agent> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty coral:has_role ;
+                                owl:someValuesFrom coral:participant
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/agent_in> ;
+                                owl:someValuesFrom <http://purl.obolibrary.org/obo/IAO_0020011>
+                              ] ;
+              rdfs:label "speaker"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A agent that acts is the process of speaking and participates of some talking."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/speechProcess
+coral:speechProcess rdf:type owl:Class ;
+                    rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty coral:hasMetadata ;
+                                      owl:someValuesFrom coral:internal_metadata
+                                    ] ;
+                    rdfs:comment "Speech process is a planned process of making speech sounds which have an actual language involved for purpose of communication."@en ;
+                    rdfs:label "speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/sports_speech_process
+coral:sports_speech_process rdf:type owl:Class ;
+                            rdfs:subClassOf coral:media_speech_process ;
+                            rdfs:label "Sport speech process is a media speech process that is composed by sport news"@en ,
+                                       "sports speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/stress
+coral:stress rdf:type owl:Class ;
+             rdfs:subClassOf coral:prosodic_features ;
+             rdfs:label "stress"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/subordinator_bound_comment
+coral:subordinator_bound_comment rdf:type owl:Class ;
+                                 rdfs:subClassOf coral:textual_unit ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty coral:isMarkedBy ;
+                                                   owl:someValuesFrom coral:COB_s
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty coral:isMarkedBy ;
+                                                   owl:allValuesFrom coral:COB_s
+                                                 ] ;
+                                 rdfs:comment "A \"subordinator bound comment\" refers to an annotation specifically linked to a subordinator within a text. A subordinator is a word or phrase that introduces a subordinate clause, such as \"because,\" \"if,\" \"when,\" \"although,\" etc. This type of comment provides detailed information or analysis directly related to the subordinator and its function within the sentence."@en ;
+                                 rdfs:label "subordinator bound comment"@en ;
+                                 <http://www.w3.org/2004/02/skos/core#definition> "Subordinator bound comment is a textual unit that has the function to annotate a subordinator within the text."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/tag
+coral:tag rdf:type owl:Class ;
+          rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000300> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:someValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( coral:segment_of_text
+                                                               coral:text
+                                                             )
+                                               ]
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty coral:marks ;
+                            owl:allValuesFrom [ rdf:type owl:Class ;
+                                                owl:unionOf ( coral:segment_of_text
+                                                              coral:text
+                                                            )
+                                              ]
+                          ] ;
+          rdfs:comment "A tag is a keyword or a term assigned to a piece of information (such as a digital document, image, or data element) to facilitate its identification, organization, and retrieval. Tags are used as metadata to describe content and to enable users to find and categorize information more efficiently."@en ;
+          rdfs:label "tag"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Tag is a textual entity that is assigned to a piece of text to allow its identification, organization or retrieval."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/tagged_text
+coral:tagged_text rdf:type owl:Class ;
+                  rdfs:subClassOf coral:text ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty coral:isMarkedBy ;
+                                    owl:someValuesFrom coral:tag
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty coral:isMarkedBy ;
+                                    owl:allValuesFrom coral:tag
+                                  ] ;
+                  rdfs:label "tagged text"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Tagged text is a text that is marked with tags"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/talk_show_speech_process
+coral:talk_show_speech_process rdf:type owl:Class ;
+                               rdfs:subClassOf coral:media_speech_process ;
+                               rdfs:label "talk show speech process"@en ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "Talk show speech process is a media speech process that is composed by talk show conversations."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/teacher
+coral:teacher rdf:type owl:Class ;
+              rdfs:subClassOf coral:formal_participant ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000054> ;
+                                owl:someValuesFrom coral:teaching_speech_process
+                              ] ;
+              rdfs:label "teacher"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Teacher is a formal participant that is realized in a teaching speech process."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/teaching_speech_process
+coral:teaching_speech_process rdf:type owl:Class ;
+                              rdfs:subClassOf coral:speechProcess ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                owl:someValuesFrom coral:teacher
+                                              ] ;
+                              rdfs:label "teaching speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/telephone_speech_process
+coral:telephone_speech_process rdf:type owl:Class ;
+                               rdfs:subClassOf coral:speechProcess ,
+                                               [ rdf:type owl:Class ;
+                                                 owl:unionOf ( coral:formal_participant
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                                 owl:someValuesFrom coral:informal_participant
+                                                               ]
+                                                             )
+                                               ] ;
+                               rdfs:label "telephone speech process"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/terminated_sequence
+coral:terminated_sequence rdf:type owl:Class ;
+                          rdfs:subClassOf coral:informational_unit ;
+                          rdfs:comment "TO-DO AXIOMS"@en ;
+                          rdfs:label "terminated sequence"@en ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "Terminated sequence is a informational unit that refers to segments of speech that are brought to a definitive end."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/text
+coral:text rdf:type owl:Class ;
+           rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000300> ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty coral:hasSource ;
+                             owl:someValuesFrom coral:audio_file
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty coral:isComposedBy ;
+                             owl:someValuesFrom coral:segment_of_text
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty coral:hasSource ;
+                             owl:allValuesFrom coral:audio_file
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty coral:isComposedBy ;
+                             owl:allValuesFrom coral:segment_of_text
+                           ] ;
+           rdfs:comment "text"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Text is a document part that is concretized in glyphs intended to be interpreted as words."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/textual_file
+coral:textual_file rdf:type owl:Class ;
+                   rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty coral:contains ;
+                                     owl:someValuesFrom coral:text
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty coral:contains ;
+                                     owl:allValuesFrom coral:text
+                                   ] ;
+                   rdfs:label "textual file"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/textual_unit
+coral:textual_unit rdf:type owl:Class ;
+                   rdfs:subClassOf coral:informational_unit ;
+                   rdfs:comment "A textual unit is a segment of speech that carries the primary content of communication. It is the core part of the message that conveys significant semantic information. They include: Statements, Questions, Commands/Requests, Exclamations"@en ,
+                                "TO-DO AXIOMS"@en ;
+                   rdfs:label "textual unit"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "A textual unit is a informational unit that carries the primary content of communication including: statements, questions, commands/requests, exclamations."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/time_taking
+coral:time_taking rdf:type owl:Class ;
+                  rdfs:subClassOf coral:non_informational_unit ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty coral:isMarkedBy ;
+                                    owl:someValuesFrom coral:TMT
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty coral:isMarkedBy ;
+                                    owl:allValuesFrom coral:TMT
+                                  ] ;
+                  rdfs:label "time taking"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Time taking is a not informational unit that  refers to the process of allocating and managing the timing of speech contributions within a conversation."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/topic
+coral:topic rdf:type owl:Class ;
+            rdfs:subClassOf coral:textual_unit ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty coral:isMarkedBy ;
+                              owl:someValuesFrom coral:TOP
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty coral:isMarkedBy ;
+                              owl:allValuesFrom coral:TOP
+                            ] ;
+            rdfs:comment "A \"topic\" typically refers to a specific subject or theme that is addressed or discussed within the corpus text. Topics are fundamental units of organization within a corpus and play a crucial role in facilitating linguistic analysis and retrieval of relevant data."@en ;
+            rdfs:label "topic"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Topic is a a textual unit that has the function to annotate the subject that the text is about."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/topic_list
+coral:topic_list rdf:type owl:Class ;
+                 rdfs:subClassOf coral:textual_unit ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty coral:isMarkedBy ;
+                                   owl:someValuesFrom coral:TPL
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty coral:isMarkedBy ;
+                                   owl:allValuesFrom coral:TPL
+                                 ] ;
+                 rdfs:comment "A \"topic list\" refers to a structured collection of topics within the corpus, where each topic represents a specific subject or theme addressed in the corpus texts. The topic list serves as a means of organizing the corpus data according to its content, facilitating efficient navigation, retrieval, and analysis of relevant texts or utterances."@en ;
+                 rdfs:label "topic list"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Topic list isa textual unit that has the function to annotate a collection of topics within the corpus, each topic representing a specific subject addressed in the corpus texts."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/topic_subordinator
+coral:topic_subordinator rdf:type owl:Class ;
+                         rdfs:subClassOf coral:textual_unit ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty coral:isMarkedBy ;
+                                           owl:someValuesFrom coral:TOP_s
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty coral:isMarkedBy ;
+                                           owl:allValuesFrom coral:TOP_s
+                                         ] ;
+                         rdfs:comment "a \"topic subordinator\" typically refers to a linguistic element or marker that signals the introduction or delimitation of a specific topic within a text or discourse. This term is often used in the analysis of spoken language or conversation to identify instances where speakers explicitly introduce or transition to a new topic of discussion."@en ;
+                         rdfs:label "topic subordinator"@en ;
+                         <http://www.w3.org/2004/02/skos/core#definition> "Topic subordinator is a textual unit that has the function to annotate the signals delimitating a topic within a text."@en .
+
+
+###  http://purl.org/ncor-br/c-oral/unclear
+coral:unclear rdf:type owl:Class ;
+              rdfs:subClassOf coral:textual_unit ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty coral:isMarkedBy ;
+                                owl:someValuesFrom coral:UNC
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty coral:isMarkedBy ;
+                                owl:allValuesFrom coral:UNC
+                              ] ;
+              rdfs:comment "\"unclear\" typically refers to instances where the meaning or interpretation of a particular linguistic element or segment within the corpus is ambiguous or not readily understandable. When annotating a corpus, linguists may encounter segments of text or utterances that are unclear due to factors such as transcription errors, speaker indistinctness, or incomplete context."@en ;
+              rdfs:label "unclear"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Unclear is a textual unit that has the function to annotate linguist elements that are ambiguous"@en .
+
+
+###  http://purl.org/ncor-br/c-oral/word-level_sequence
+coral:word-level_sequence rdf:type owl:Class ;
+                          rdfs:subClassOf coral:informational_unit ;
+                          rdfs:label "word-level sequence"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/agent
+<http://www.ontologyrepository.com/CommonCoreOntologies/agent> rdf:type owl:Class ;
+                                                               owl:equivalentClass [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000040>
+                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/agent_in> ;
+                                                                                                            owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000015>
+                                                                                                          ]
+                                                                                                        ) ;
+                                                                                     rdf:type owl:Class
+                                                                                   ] ;
+                                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                                                               rdfs:label "agent"@en ;
+                                                               <http://www.w3.org/2004/02/skos/core#definition> "A Material Entity that is capable of performing Planned Acts"@en .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
